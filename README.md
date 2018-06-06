@@ -1,6 +1,6 @@
 # README
 
-A thin restful API using Grape, MongoDB and RSpec API documentation mounted on Rails 5.
+A thin restful API mounted on Rails 5 using Grape, MongoDB and RSpec API documentation .
 
 ### Prerequisites
 
