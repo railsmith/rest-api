@@ -1,24 +1,47 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A thin restful API using Grape, MongoDB and RSpec API documentation.
 
-Things you may want to cover:
+### Prerequisites
 
 * Ruby version
 
+  Ruby 2.4.1
+
 * System dependencies
+  
+  Rails 5
 
-* Configuration
+  MongoDB 3.6.2
 
-* Database creation
+  Mongoid 6
 
-* Database initialization
 
-* How to run the test suite
+### Installation
 
-* Services (job queues, cache servers, search engines, etc.)
+```r
+  bundle install
+```
 
-* Deployment instructions
 
-* ...
+### How to run the test suite
+
+```r  
+  bundle exec rspec spec/acceptance/api/v1/companies_spec.rb
+```
+
+ * For running individual test cases
+
+```r  
+  bundle exec rspec spec/acceptance/api/v1/companies_spec.rb -e "create a company"
+```
+
+### Documentation
+
+```r
+  rails docs:generate
+```
+
+This will run the test suite and generate the API documentation which can be viewed at 
+
+http://localhost:3000/api/docs
