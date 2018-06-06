@@ -1,0 +1,46 @@
+{
+  "resource": "companies",
+  "resource_explanation": null,
+  "http_method": "PATCH",
+  "route": "api/companies/:id",
+  "description": "update a company with new branch",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "company",
+      "description": "A company JSON Object"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PATCH",
+      "request_path": "api/companies/5b178994c9e7e87785abae22",
+      "request_body": "{\"company\":{\"branches\":[{\"city\":\"Albany\",\"country\":\"USA\",\"line1\":\"Apt #14, Suite #22\",\"line2\":\"ABC Street, BCDTown\",\"name\":\"Development\",\"state\":\"New York\",\"zip\":750053}],\"established_date\":\"2018-06-06\",\"name\":\"Google\",\"reg_id\":1234,\"timings\":\"09:00-18:00\",\"website\":\"google.com\"}}",
+      "request_headers": {
+        "Accept": "application/vnd.crm-v1+json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"name\": \"Google\",\n  \"website\": \"google.com\",\n  \"reg_id\": 1234,\n  \"timings\": \"09:00-18:00\",\n  \"established_date\": \"2018-06-06\",\n  \"branches\": [\n    {\n      \"name\": \"Development\",\n      \"line1\": \"Apt #14, Suite #22\",\n      \"line2\": \"ABC Street, BCDTown\",\n      \"city\": \"Albany\",\n      \"state\": \"New York\",\n      \"country\": \"USA\",\n      \"zip\": 750053\n    }\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "269",
+        "ETag": "W/\"11c91393ac73eefc02bd30c4207a3901\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "911ea5ef-2090-4727-97e7-580917d0dd90",
+        "X-Runtime": "0.660624"
+      },
+      "response_content_type": "application/json",
+      "curl": "curl \"http://localhost:3000/api/companies/5b178994c9e7e87785abae22\" -d '{\"company\":{\"branches\":[{\"city\":\"Albany\",\"country\":\"USA\",\"line1\":\"Apt #14, Suite #22\",\"line2\":\"ABC Street, BCDTown\",\"name\":\"Development\",\"state\":\"New York\",\"zip\":750053}],\"established_date\":\"2018-06-06\",\"name\":\"Google\",\"reg_id\":1234,\"timings\":\"09:00-18:00\",\"website\":\"google.com\"}}' -X PATCH \\\n\t-H \"Accept: application/vnd.crm-v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

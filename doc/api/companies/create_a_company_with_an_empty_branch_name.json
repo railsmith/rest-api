@@ -1,0 +1,45 @@
+{
+  "resource": "companies",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/companies",
+  "description": "create a company with an empty branch name",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "company",
+      "description": "A company JSON Object"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/companies",
+      "request_body": "{\"company\":{\"branches\":[{\"city\":\"Albany\",\"country\":\"USA\",\"line1\":\"Apt #14, Suite #22\",\"line2\":\"ABC Street, BCDTown\",\"name\":\"\",\"state\":\"New York\",\"zip\":750053}],\"established_date\":\"2018-06-06\",\"name\":\"Google\",\"reg_id\":1234,\"timings\":\"09:00-18:00\",\"website\":\"google.com\"}}",
+      "request_headers": {
+        "Accept": "application/vnd.crm-v1+json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"error\": \"\\nmessage:\\n  Validation of Company failed.\\nsummary:\\n  The following errors were found: Branches is invalid\\nresolution:\\n  Try persisting the document with valid data or remove the validations.\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "208",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "0df49b91-8ffa-43ca-bc04-259797727bd2",
+        "X-Runtime": "0.006175"
+      },
+      "response_content_type": "application/json",
+      "curl": "curl \"http://localhost:3000/api/companies\" -d '{\"company\":{\"branches\":[{\"city\":\"Albany\",\"country\":\"USA\",\"line1\":\"Apt #14, Suite #22\",\"line2\":\"ABC Street, BCDTown\",\"name\":\"\",\"state\":\"New York\",\"zip\":750053}],\"established_date\":\"2018-06-06\",\"name\":\"Google\",\"reg_id\":1234,\"timings\":\"09:00-18:00\",\"website\":\"google.com\"}}' -X POST \\\n\t-H \"Accept: application/vnd.crm-v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "resource": "companies",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "api/companies",
+  "description": "create a company with content type xml",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "company",
+      "description": "A company JSON Object"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/companies",
+      "request_body": "{\"company\":{\"branches\":[{\"city\":\"Albany\",\"country\":\"USA\",\"line1\":\"Apt #14, Suite #22\",\"line2\":\"ABC Street, BCDTown\",\"name\":\"Development\",\"state\":\"New York\",\"zip\":750053}],\"established_date\":\"2018-06-06\",\"name\":\"Google\",\"reg_id\":1234,\"timings\":\"09:00-18:00\",\"website\":\"google.com\"}}",
+      "request_headers": {
+        "Accept": "application/vnd.crm-v1+json",
+        "Content-Type": "application/xml",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/xml",
+      "response_status": 406,
+      "response_status_text": "Not Acceptable",
+      "response_body": "{\n  \"error\": \"The requested content-type 'application/xml' is not supported.\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "74",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "342f6ce6-224e-4847-804b-be47098a0c8e",
+        "X-Runtime": "0.001313"
+      },
+      "response_content_type": "application/json",
+      "curl": "curl \"http://localhost:3000/api/companies\" -d '{\"company\":{\"branches\":[{\"city\":\"Albany\",\"country\":\"USA\",\"line1\":\"Apt #14, Suite #22\",\"line2\":\"ABC Street, BCDTown\",\"name\":\"Development\",\"state\":\"New York\",\"zip\":750053}],\"established_date\":\"2018-06-06\",\"name\":\"Google\",\"reg_id\":1234,\"timings\":\"09:00-18:00\",\"website\":\"google.com\"}}' -X POST \\\n\t-H \"Accept: application/vnd.crm-v1+json\" \\\n\t-H \"Content-Type: application/xml\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "resources": [
+    {
+      "name": "companies",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "create a company",
+          "link": "companies/create_a_company.json",
+          "groups": "all",
+          "route": "api/companies",
+          "method": "post"
+        },
+        {
+          "description": "create a company with an empty branch name",
+          "link": "companies/create_a_company_with_an_empty_branch_name.json",
+          "groups": "all",
+          "route": "api/companies",
+          "method": "post"
+        },
+        {
+          "description": "create a company with content type xml",
+          "link": "companies/create_a_company_with_content_type_xml.json",
+          "groups": "all",
+          "route": "api/companies",
+          "method": "post"
+        },
+        {
+          "description": "create a company with reg_id as alphanumeric",
+          "link": "companies/create_a_company_with_reg_id_as_alphanumeric.json",
+          "groups": "all",
+          "route": "api/companies",
+          "method": "post"
+        },
+        {
+          "description": "create a company without a name",
+          "link": "companies/create_a_company_without_a_name.json",
+          "groups": "all",
+          "route": "api/companies",
+          "method": "post"
+        },
+        {
+          "description": "delete a company",
+          "link": "companies/delete_a_company.json",
+          "groups": "all",
+          "route": "api/companies/:id",
+          "method": "delete"
+        },
+        {
+          "description": "get a company",
+          "link": "companies/get_a_company.json",
+          "groups": "all",
+          "route": "api/companies/:id",
+          "method": "get"
+        },
+        {
+          "description": "get all companies",
+          "link": "companies/get_all_companies.json",
+          "groups": "all",
+          "route": "api/companies",
+          "method": "get"
+        },
+        {
+          "description": "get all established",
+          "link": "companies/get_all_established.json",
+          "groups": "all",
+          "route": "api/companies/established",
+          "method": "get"
+        },
+        {
+          "description": "get all mid_size",
+          "link": "companies/get_all_mid_size.json",
+          "groups": "all",
+          "route": "api/companies/mid_size",
+          "method": "get"
+        },
+        {
+          "description": "get all start_ups",
+          "link": "companies/get_all_start_ups.json",
+          "groups": "all",
+          "route": "api/companies/startup",
+          "method": "get"
+        },
+        {
+          "description": "update a company",
+          "link": "companies/update_a_company.json",
+          "groups": "all",
+          "route": "api/companies/:id",
+          "method": "patch"
+        },
+        {
+          "description": "update a company with new branch",
+          "link": "companies/update_a_company_with_new_branch.json",
+          "groups": "all",
+          "route": "api/companies/:id",
+          "method": "patch"
+        }
+      ]
+    }
+  ]
+}

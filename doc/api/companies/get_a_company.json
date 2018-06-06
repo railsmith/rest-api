@@ -1,0 +1,44 @@
+{
+  "resource": "companies",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/companies/:id",
+  "description": "get a company",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/companies/5b178995c9e7e87785abae54",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.crm-v1+json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "{}": null
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"name\": \"Google\",\n  \"website\": \"google.com\",\n  \"reg_id\": 1234,\n  \"timings\": \"09:00-18:00\",\n  \"established_date\": \"2018-06-06\",\n  \"branches\": [\n    {\n      \"name\": \"Development\",\n      \"line1\": \"Apt #14, Suite #22\",\n      \"line2\": \"ABC Street, BCDTown\",\n      \"city\": \"Albany\",\n      \"state\": \"New York\",\n      \"country\": \"USA\",\n      \"zip\": 750053\n    },\n    {\n      \"name\": \"Development\",\n      \"line1\": \"Apt #14, Suite #22\",\n      \"line2\": \"ABC Street, BCDTown\",\n      \"city\": \"Albany\",\n      \"state\": \"New York\",\n      \"country\": \"USA\",\n      \"zip\": 750053\n    },\n    {\n      \"name\": \"Development\",\n      \"line1\": \"Apt #14, Suite #22\",\n      \"line2\": \"ABC Street, BCDTown\",\n      \"city\": \"Albany\",\n      \"state\": \"New York\",\n      \"country\": \"USA\",\n      \"zip\": 750053\n    }\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "561",
+        "ETag": "W/\"6d0efbf607192adbbebe56496cc34e14\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "9a874c44-ce4e-4a67-b34d-c09c94d9ad57",
+        "X-Runtime": "0.005981"
+      },
+      "response_content_type": "application/json",
+      "curl": "curl -g \"http://localhost:3000/api/companies/5b178995c9e7e87785abae54\" -X GET \\\n\t-H \"Accept: application/vnd.crm-v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "resource": "companies",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "api/companies/startup",
+  "description": "get all start_ups",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "api/companies/startup",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.crm-v1+json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"name\": \"Google\",\n    \"website\": \"google.com\",\n    \"reg_id\": 1234,\n    \"timings\": \"09:00-18:00\",\n    \"established_date\": \"2014-12-06\",\n    \"branches\": [\n      {\n        \"name\": \"Development\",\n        \"line1\": \"Apt #14, Suite #22\",\n        \"line2\": \"ABC Street, BCDTown\",\n        \"city\": \"Albany\",\n        \"state\": \"New York\",\n        \"country\": \"USA\",\n        \"zip\": 750053\n      },\n      {\n        \"name\": \"Development\",\n        \"line1\": \"Apt #14, Suite #22\",\n        \"line2\": \"ABC Street, BCDTown\",\n        \"city\": \"Albany\",\n        \"state\": \"New York\",\n        \"country\": \"USA\",\n        \"zip\": 750053\n      },\n      {\n        \"name\": \"Development\",\n        \"line1\": \"Apt #14, Suite #22\",\n        \"line2\": \"ABC Street, BCDTown\",\n        \"city\": \"Albany\",\n        \"state\": \"New York\",\n        \"country\": \"USA\",\n        \"zip\": 750053\n      }\n    ]\n  },\n  {\n    \"name\": \"Google\",\n    \"website\": \"google.com\",\n    \"reg_id\": 1234,\n    \"timings\": \"09:00-18:00\",\n    \"established_date\": \"2014-12-06\",\n    \"branches\": [\n      {\n        \"name\": \"Development\",\n        \"line1\": \"Apt #14, Suite #22\",\n        \"line2\": \"ABC Street, BCDTown\",\n        \"city\": \"Albany\",\n        \"state\": \"New York\",\n        \"country\": \"USA\",\n        \"zip\": 750053\n      },\n      {\n        \"name\": \"Development\",\n        \"line1\": \"Apt #14, Suite #22\",\n        \"line2\": \"ABC Street, BCDTown\",\n        \"city\": \"Albany\",\n        \"state\": \"New York\",\n        \"country\": \"USA\",\n        \"zip\": 750053\n      },\n      {\n        \"name\": \"Development\",\n        \"line1\": \"Apt #14, Suite #22\",\n        \"line2\": \"ABC Street, BCDTown\",\n        \"city\": \"Albany\",\n        \"state\": \"New York\",\n        \"country\": \"USA\",\n        \"zip\": 750053\n      }\n    ]\n  },\n  {\n    \"name\": \"Google\",\n    \"website\": \"google.com\",\n    \"reg_id\": 1234,\n    \"timings\": \"09:00-18:00\",\n    \"established_date\": \"2014-12-06\",\n    \"branches\": [\n      {\n        \"name\": \"Development\",\n        \"line1\": \"Apt #14, Suite #22\",\n        \"line2\": \"ABC Street, BCDTown\",\n        \"city\": \"Albany\",\n        \"state\": \"New York\",\n        \"country\": \"USA\",\n        \"zip\": 750053\n      },\n      {\n        \"name\": \"Development\",\n        \"line1\": \"Apt #14, Suite #22\",\n        \"line2\": \"ABC Street, BCDTown\",\n        \"city\": \"Albany\",\n        \"state\": \"New York\",\n        \"country\": \"USA\",\n        \"zip\": 750053\n      },\n      {\n        \"name\": \"Development\",\n        \"line1\": \"Apt #14, Suite #22\",\n        \"line2\": \"ABC Street, BCDTown\",\n        \"city\": \"Albany\",\n        \"state\": \"New York\",\n        \"country\": \"USA\",\n        \"zip\": 750053\n      }\n    ]\n  }\n]",
+      "response_headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "1687",
+        "ETag": "W/\"c7f7353114485395f6753d68bf7e2601\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "16918fcd-2c69-4651-8c6b-ec85f7af8def",
+        "X-Runtime": "0.009934"
+      },
+      "response_content_type": "application/json",
+      "curl": "curl -g \"http://localhost:3000/api/companies/startup\" -X GET \\\n\t-H \"Accept: application/vnd.crm-v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -1,0 +1,902 @@
+create a company
+----------------
+
+Parameters:
+  * company - A company JSON Object
+
+Request:
+  POST api/companies
+  Accept: application/vnd.crm-v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {"company":{"branches":[{"city":"Albany","country":"USA","line1":"Apt #14, Suite #22","line2":"ABC Street, BCDTown","name":"Development","state":"New York","zip":750053}],"established_date":"2018-06-06","name":"Google","reg_id":1234,"timings":"09:00-18:00","website":"google.com"}}
+
+Response:
+  Status: 201 Created
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 269
+  Content-Type: application/json
+  ETag: W/"11c91393ac73eefc02bd30c4207a3901"
+  X-Request-Id: b4859bd2-834c-489b-80b5-a1a197790b2c
+  X-Runtime: 0.063455
+
+  {
+    "name": "Google",
+    "website": "google.com",
+    "reg_id": 1234,
+    "timings": "09:00-18:00",
+    "established_date": "2018-06-06",
+    "branches": [
+      {
+        "name": "Development",
+        "line1": "Apt #14, Suite #22",
+        "line2": "ABC Street, BCDTown",
+        "city": "Albany",
+        "state": "New York",
+        "country": "USA",
+        "zip": 750053
+      }
+    ]
+  }
+
+
+update a company
+----------------
+
+Parameters:
+  * company - A company JSON Object
+
+Request:
+  PATCH api/companies/5b178994c9e7e87785abae1e
+  Accept: application/vnd.crm-v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {"company":{"branches":[{"city":"Albany","country":"USA","line1":"Apt #14, Suite #22","line2":"ABC Street, BCDTown","name":"Development","state":"New York","zip":750053},{"city":"Albany","country":"USA","line1":"Apt #14, Suite #22","line2":"ABC Street, BCDTown","name":"Development","state":"New York","zip":750053},{"city":"Albany","country":"USA","line1":"Apt #14, Suite #22","line2":"ABC Street, BCDTown","name":"Development","state":"New York","zip":750053}],"established_date":"2018-06-06","name":"Google","reg_id":1234,"timings":"09:00-18:00","website":"google.com"}}
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 561
+  Content-Type: application/json
+  ETag: W/"6d0efbf607192adbbebe56496cc34e14"
+  X-Request-Id: ab5d4ad1-6796-478c-bcf7-30035a23f3e8
+  X-Runtime: 0.013433
+
+  {
+    "name": "Google",
+    "website": "google.com",
+    "reg_id": 1234,
+    "timings": "09:00-18:00",
+    "established_date": "2018-06-06",
+    "branches": [
+      {
+        "name": "Development",
+        "line1": "Apt #14, Suite #22",
+        "line2": "ABC Street, BCDTown",
+        "city": "Albany",
+        "state": "New York",
+        "country": "USA",
+        "zip": 750053
+      },
+      {
+        "name": "Development",
+        "line1": "Apt #14, Suite #22",
+        "line2": "ABC Street, BCDTown",
+        "city": "Albany",
+        "state": "New York",
+        "country": "USA",
+        "zip": 750053
+      },
+      {
+        "name": "Development",
+        "line1": "Apt #14, Suite #22",
+        "line2": "ABC Street, BCDTown",
+        "city": "Albany",
+        "state": "New York",
+        "country": "USA",
+        "zip": 750053
+      }
+    ]
+  }
+
+
+update a company with new branch
+--------------------------------
+
+Parameters:
+  * company - A company JSON Object
+
+Request:
+  PATCH api/companies/5b178994c9e7e87785abae22
+  Accept: application/vnd.crm-v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {"company":{"branches":[{"city":"Albany","country":"USA","line1":"Apt #14, Suite #22","line2":"ABC Street, BCDTown","name":"Development","state":"New York","zip":750053}],"established_date":"2018-06-06","name":"Google","reg_id":1234,"timings":"09:00-18:00","website":"google.com"}}
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 269
+  Content-Type: application/json
+  ETag: W/"11c91393ac73eefc02bd30c4207a3901"
+  X-Request-Id: 911ea5ef-2090-4727-97e7-580917d0dd90
+  X-Runtime: 0.660624
+
+  {
+    "name": "Google",
+    "website": "google.com",
+    "reg_id": 1234,
+    "timings": "09:00-18:00",
+    "established_date": "2018-06-06",
+    "branches": [
+      {
+        "name": "Development",
+        "line1": "Apt #14, Suite #22",
+        "line2": "ABC Street, BCDTown",
+        "city": "Albany",
+        "state": "New York",
+        "country": "USA",
+        "zip": 750053
+      }
+    ]
+  }
+
+
+create a company without a name
+-------------------------------
+
+Parameters:
+  * company - A company JSON Object
+
+Request:
+  POST api/companies
+  Accept: application/vnd.crm-v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {"company":{"branches":[{"city":"Albany","country":"USA","line1":"Apt #14, Suite #22","line2":"ABC Street, BCDTown","state":"New York","zip":750053}],"established_date":"2018-06-06","reg_id":1234,"timings":"09:00-18:00","website":"google.com"}}
+
+Response:
+  Status: 422 Unprocessable Entity
+  Cache-Control: no-cache
+  Content-Length: 75
+  Content-Type: application/json
+  X-Request-Id: 81a896e6-7589-4c1b-b794-e5b8af31c2b9
+  X-Runtime: 0.004126
+
+  {
+    "error": "company[name] is missing, company[branches][0][name] is missing"
+  }
+
+
+create a company with reg_id as alphanumeric
+--------------------------------------------
+
+Parameters:
+  * company - A company JSON Object
+
+Request:
+  POST api/companies
+  Accept: application/vnd.crm-v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {"company":{"branches":[{"city":"Albany","country":"USA","line1":"Apt #14, Suite #22","line2":"ABC Street, BCDTown","name":"Development","state":"New York","zip":750053}],"established_date":"2018-06-06","name":"Google","reg_id":0,"timings":"09:00-18:00","website":"google.com"}}
+
+Response:
+  Status: 422 Unprocessable Entity
+  Cache-Control: no-cache
+  Content-Length: 215
+  Content-Type: application/json
+  X-Request-Id: e54a7c00-6329-468b-ac6c-0aeb5607f296
+  X-Runtime: 0.005746
+
+  {
+    "error": "\nmessage:\n  Validation of Company failed.\nsummary:\n  The following errors were found: Reg must be greater than 0\nresolution:\n  Try persisting the document with valid data or remove the validations."
+  }
+
+
+create a company with an empty branch name
+------------------------------------------
+
+Parameters:
+  * company - A company JSON Object
+
+Request:
+  POST api/companies
+  Accept: application/vnd.crm-v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {"company":{"branches":[{"city":"Albany","country":"USA","line1":"Apt #14, Suite #22","line2":"ABC Street, BCDTown","name":"","state":"New York","zip":750053}],"established_date":"2018-06-06","name":"Google","reg_id":1234,"timings":"09:00-18:00","website":"google.com"}}
+
+Response:
+  Status: 422 Unprocessable Entity
+  Cache-Control: no-cache
+  Content-Length: 208
+  Content-Type: application/json
+  X-Request-Id: 0df49b91-8ffa-43ca-bc04-259797727bd2
+  X-Runtime: 0.006175
+
+  {
+    "error": "\nmessage:\n  Validation of Company failed.\nsummary:\n  The following errors were found: Branches is invalid\nresolution:\n  Try persisting the document with valid data or remove the validations."
+  }
+
+
+get all companies
+-----------------
+
+Request:
+  GET api/companies
+  Accept: application/vnd.crm-v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 1687
+  Content-Type: application/json
+  ETag: W/"ea334406a582af1eb82aeefc290f8539"
+  X-Request-Id: 0d4ca327-a766-4742-882f-f17d4a0e969e
+  X-Runtime: 0.007143
+
+  [
+    {
+      "name": "Google",
+      "website": "google.com",
+      "reg_id": 1234,
+      "timings": "09:00-18:00",
+      "established_date": "2018-06-06",
+      "branches": [
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        }
+      ]
+    },
+    {
+      "name": "Google",
+      "website": "google.com",
+      "reg_id": 1234,
+      "timings": "09:00-18:00",
+      "established_date": "2018-06-06",
+      "branches": [
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        }
+      ]
+    },
+    {
+      "name": "Google",
+      "website": "google.com",
+      "reg_id": 1234,
+      "timings": "09:00-18:00",
+      "established_date": "2018-06-06",
+      "branches": [
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        }
+      ]
+    }
+  ]
+
+
+get all start_ups
+-----------------
+
+Request:
+  GET api/companies/startup
+  Accept: application/vnd.crm-v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 1687
+  Content-Type: application/json
+  ETag: W/"c7f7353114485395f6753d68bf7e2601"
+  X-Request-Id: 16918fcd-2c69-4651-8c6b-ec85f7af8def
+  X-Runtime: 0.009934
+
+  [
+    {
+      "name": "Google",
+      "website": "google.com",
+      "reg_id": 1234,
+      "timings": "09:00-18:00",
+      "established_date": "2014-12-06",
+      "branches": [
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        }
+      ]
+    },
+    {
+      "name": "Google",
+      "website": "google.com",
+      "reg_id": 1234,
+      "timings": "09:00-18:00",
+      "established_date": "2014-12-06",
+      "branches": [
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        }
+      ]
+    },
+    {
+      "name": "Google",
+      "website": "google.com",
+      "reg_id": 1234,
+      "timings": "09:00-18:00",
+      "established_date": "2014-12-06",
+      "branches": [
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        }
+      ]
+    }
+  ]
+
+
+get all mid_size
+----------------
+
+Request:
+  GET api/companies/mid_size
+  Accept: application/vnd.crm-v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 1687
+  Content-Type: application/json
+  ETag: W/"1e9290c432b2c23be8d4e963dff3ee09"
+  X-Request-Id: ca0d8253-e4b9-4d58-8c7d-baf12b0d8d43
+  X-Runtime: 0.010136
+
+  [
+    {
+      "name": "Google",
+      "website": "google.com",
+      "reg_id": 1234,
+      "timings": "09:00-18:00",
+      "established_date": "2008-12-06",
+      "branches": [
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        }
+      ]
+    },
+    {
+      "name": "Google",
+      "website": "google.com",
+      "reg_id": 1234,
+      "timings": "09:00-18:00",
+      "established_date": "2008-12-06",
+      "branches": [
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        }
+      ]
+    },
+    {
+      "name": "Google",
+      "website": "google.com",
+      "reg_id": 1234,
+      "timings": "09:00-18:00",
+      "established_date": "2008-12-06",
+      "branches": [
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        }
+      ]
+    }
+  ]
+
+
+get all established
+-------------------
+
+Request:
+  GET api/companies/established
+  Accept: application/vnd.crm-v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 1687
+  Content-Type: application/json
+  ETag: W/"3baf54c448165e07a5a7b21a2c16563a"
+  X-Request-Id: e235a76d-4a27-4f9d-a09a-5224cbe6cfde
+  X-Runtime: 0.013374
+
+  [
+    {
+      "name": "Google",
+      "website": "google.com",
+      "reg_id": 1234,
+      "timings": "09:00-18:00",
+      "established_date": "1998-12-06",
+      "branches": [
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        }
+      ]
+    },
+    {
+      "name": "Google",
+      "website": "google.com",
+      "reg_id": 1234,
+      "timings": "09:00-18:00",
+      "established_date": "1998-12-06",
+      "branches": [
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        }
+      ]
+    },
+    {
+      "name": "Google",
+      "website": "google.com",
+      "reg_id": 1234,
+      "timings": "09:00-18:00",
+      "established_date": "1998-12-06",
+      "branches": [
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        },
+        {
+          "name": "Development",
+          "line1": "Apt #14, Suite #22",
+          "line2": "ABC Street, BCDTown",
+          "city": "Albany",
+          "state": "New York",
+          "country": "USA",
+          "zip": 750053
+        }
+      ]
+    }
+  ]
+
+
+get a company
+-------------
+
+Request:
+  GET api/companies/5b178995c9e7e87785abae54
+  Accept: application/vnd.crm-v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {}=
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 561
+  Content-Type: application/json
+  ETag: W/"6d0efbf607192adbbebe56496cc34e14"
+  X-Request-Id: 9a874c44-ce4e-4a67-b34d-c09c94d9ad57
+  X-Runtime: 0.005981
+
+  {
+    "name": "Google",
+    "website": "google.com",
+    "reg_id": 1234,
+    "timings": "09:00-18:00",
+    "established_date": "2018-06-06",
+    "branches": [
+      {
+        "name": "Development",
+        "line1": "Apt #14, Suite #22",
+        "line2": "ABC Street, BCDTown",
+        "city": "Albany",
+        "state": "New York",
+        "country": "USA",
+        "zip": 750053
+      },
+      {
+        "name": "Development",
+        "line1": "Apt #14, Suite #22",
+        "line2": "ABC Street, BCDTown",
+        "city": "Albany",
+        "state": "New York",
+        "country": "USA",
+        "zip": 750053
+      },
+      {
+        "name": "Development",
+        "line1": "Apt #14, Suite #22",
+        "line2": "ABC Street, BCDTown",
+        "city": "Albany",
+        "state": "New York",
+        "country": "USA",
+        "zip": 750053
+      }
+    ]
+  }
+
+
+delete a company
+----------------
+
+Request:
+  DELETE api/companies/5b178995c9e7e87785abae58
+  Accept: application/vnd.crm-v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {}
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 561
+  Content-Type: application/json
+  ETag: W/"6d0efbf607192adbbebe56496cc34e14"
+  X-Request-Id: 2e9bf929-6cd8-4ff8-bc5e-a2dc564ab1c5
+  X-Runtime: 0.006392
+
+  {
+    "name": "Google",
+    "website": "google.com",
+    "reg_id": 1234,
+    "timings": "09:00-18:00",
+    "established_date": "2018-06-06",
+    "branches": [
+      {
+        "name": "Development",
+        "line1": "Apt #14, Suite #22",
+        "line2": "ABC Street, BCDTown",
+        "city": "Albany",
+        "state": "New York",
+        "country": "USA",
+        "zip": 750053
+      },
+      {
+        "name": "Development",
+        "line1": "Apt #14, Suite #22",
+        "line2": "ABC Street, BCDTown",
+        "city": "Albany",
+        "state": "New York",
+        "country": "USA",
+        "zip": 750053
+      },
+      {
+        "name": "Development",
+        "line1": "Apt #14, Suite #22",
+        "line2": "ABC Street, BCDTown",
+        "city": "Albany",
+        "state": "New York",
+        "country": "USA",
+        "zip": 750053
+      }
+    ]
+  }
+
+
+create a company with content type xml
+--------------------------------------
+
+Parameters:
+  * company - A company JSON Object
+
+Request:
+  POST api/companies
+  Accept: application/vnd.crm-v1+json
+  Content-Type: application/xml
+  Cookie: 
+  Host: example.org
+
+  {"company":{"branches":[{"city":"Albany","country":"USA","line1":"Apt #14, Suite #22","line2":"ABC Street, BCDTown","name":"Development","state":"New York","zip":750053}],"established_date":"2018-06-06","name":"Google","reg_id":1234,"timings":"09:00-18:00","website":"google.com"}}
+
+Response:
+  Status: 406 Not Acceptable
+  Cache-Control: no-cache
+  Content-Length: 74
+  Content-Type: application/json
+  X-Request-Id: 342f6ce6-224e-4847-804b-be47098a0c8e
+  X-Runtime: 0.001313
+
+  {
+    "error": "The requested content-type 'application/xml' is not supported."
+  }
