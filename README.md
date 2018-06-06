@@ -1,20 +1,20 @@
 # README
 
-A thin restful API using Grape, MongoDB and RSpec API documentation.
+A thin restful API using Grape, MongoDB and RSpec API documentation mounted on Rails 5.
 
 ### Prerequisites
 
 * Ruby version
 
-  Ruby 2.4.1
+   **Ruby 2.4.1**
 
 * System dependencies
   
-  Rails 5
+   **Rails 5**
 
-  MongoDB 3.6.2
+   **MongoDB 3.6.2**
 
-  Mongoid 6
+   **Mongoid 6**
 
 
 ### Installation
