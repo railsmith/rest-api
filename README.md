@@ -1,6 +1,6 @@
 # README
 
-A thin restful API mounted on Rails 5 using Grape, MongoDB and RSpec API documentation .
+A thin restful API mounted on Rails 5 using Grape, MongoDB and RSpec API documentation.
 
 ### Prerequisites
 
@@ -30,7 +30,7 @@ A thin restful API mounted on Rails 5 using Grape, MongoDB and RSpec API documen
   bundle exec rspec spec/acceptance/api/v1/companies_spec.rb
 ```
 
- * For running individual test cases
+### For running individual test cases
 
 ```r  
   bundle exec rspec spec/acceptance/api/v1/companies_spec.rb -e "create a company"
@@ -42,6 +42,6 @@ A thin restful API mounted on Rails 5 using Grape, MongoDB and RSpec API documen
   rails docs:generate
 ```
 
-This will run the test suite and generate the API documentation which can be viewed at 
+This will run the test suite and generate the API documentation which can be viewed at:
 
 http://localhost:3000/api/docs
